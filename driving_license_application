@@ -1,1 +1,28 @@
+#include <stdio.h>
 
+int main()
+{
+    char name[50];
+    int age;
+
+    printf("Enter your name: ");
+    scanf("%s", name);
+    printf("Enter your age:");
+    scanf("%d",&age);
+    if(age>=18) 
+    {
+        printf("You are now eligible for applying a driving license:");
+        printf("\n name=%s",name);
+        printf("\n age=%d",age);
+        auto int var;
+        printf("\n D.L Id=%d",var);
+        
+    }
+    else 
+    {
+       printf("oh you need to be 18 years for driving license ");
+    }
+    
+
+    return 0;
+}
