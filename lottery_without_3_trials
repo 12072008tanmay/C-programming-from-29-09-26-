@@ -1,1 +1,42 @@
+#include <stdio.h>
+#include <stdlib.h> /*for using rand() and srand() */
+#include <time.h>  /*for using the time() to make it truely random and fair*/
+#define MAX_LIMIT 10
+#define MIN_LIMIT 0
 
+int main()
+{
+    auto int var2 ; /*random lottery number*/
+    int var1 ;
+    printf("Enter a random number between %d",MIN_LIMIT);
+    printf("and %d",MAX_LIMIT);
+    scanf("%d",&var1);
+    srand(time(NULL));/*srand used to seed a random number and time(NULL) used to generate different random numbers in real time */
+    var2=rand()%(MAX_LIMIT-MIN_LIMIT+1)+MIN_LIMIT; /*rand() returns a random value from 0 to rand_max */
+    /*but to make our limits right % or modulie is used i.e the value divided by max-min+1(10 in this case) gives remainder from 0 to 1*/
+    /*also +MIN_LIMIT is 0 in this case so it does no difference but if we change limits  like 5 to 15 then the range will  make it to (10)+5=15 accordingly*/
+    
+    if(var1==var2)
+        {
+            printf("Congradulations you have won the lottery!!!!");
+            printf("\n number you selected=%d",var1);
+            printf("\n the lucky number=%d",var2);
+        }
+    else 
+    {
+        printf("Sorry your number is not the selected lottery number");
+            printf("\n number you selected=%d",var1);
+            printf("\n the lucky number=%d",var2);
+            if(var1>var2)
+        {
+            printf("\n sorry you fell short by %d",var1-var2);
+            printf("values...");
+        }
+        else 
+        {
+            printf("\n sorry you fell short by %d",var2-var1);
+            printf("values...");
+        }
+    }
+return 0;
+}
