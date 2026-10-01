@@ -14,6 +14,7 @@ int main()
     srand(time(NULL));/*srand used to seed a random number and time(NULL) used to generate different random numbers in real time */
     var2=rand()%(MAX_LIMIT-MIN_LIMIT+1)+MIN_LIMIT; /*rand() returns a random value from 0 to rand_max */
     /*but to make our limits right % or modulie is used i.e the value divided by max-min+1(11[Addition and subtraction has equal priority so solve eq from left to right] in this case) gives remainder from 0 to 10*/
+    /*so the basic thing here is like in this case its some number%11 so u get all values from 0 to 10 likewise if it was like 0 to 100 then it will be some number%101 so u get all values from 0 to 100 thats the main logic*/
     /*for example if value is 3400 then 3400/11 is 390.09.. and gives a remainder of 1 when 3400- (390*11)[this is job of mudulo operator to generate remainders]  */
     /*also +MIN_LIMIT is 0 in this case so it does no difference but if we change limits  like 5 to 15 then the range will  make it to (10)+5=15 accordingly*/
     
