@@ -1,1 +1,108 @@
+#include <stdio.h>
+#include<string.h>/*this is used because we are using strcmp() function*/
 
+
+int main() {
+    
+    char name[50];/*50 value should be asssigned to empty array*/
+    int joining_year;
+    int enrolling_year;
+    int current_sal;
+    int starting_sal, new_sal;
+    int Years=enrolling_year-joining_year;
+    char role[50];
+    printf("Hi employee please enter your name:");
+    scanf("%s",name);
+    printf("Enter your joining year:");
+    scanf("%d",&joining_year);
+    printf("Enter the year you are in while typing now:");
+    scanf("%d",&enrolling_year);
+    if(enrolling_year==joining_year) 
+    {
+        printf("Sorry we can't promote u or give u salary hike since this is your very first year....");
+    }
+    else {
+    printf("Enter your current salary:");
+    scanf("%d",&current_sal);
+    printf("Enter what was your starting salary:");
+    scanf("%d",&starting_sal);
+    printf("for roles jr enginner(jre)");
+    printf("\n for assistant enginner(assise)");
+    printf("\n for associate enginner(assosce)");
+    printf("\n for senior enginner(sre)");
+    printf("Enter your role:");
+    scanf("%s",role);
+        if(strcmp(role,"jre")==0)/*HERE we CANT use if(role=="jre" if we do then we get un expected values of new_sal)*/
+        {
+            new_sal=current_sal+((enrolling_year-joining_year)*5000);
+            printf("promotion done!!!");
+            printf("\n name=%s",name);
+            printf("\n joining year=%d",joining_year);
+            printf("\n Role=%s",role);
+            printf("\n initial salary=%d",current_sal);
+            printf("\n new salary=%d",new_sal);
+            printf("\n salary hike=%d",new_sal-current_sal);
+        }
+        else if(strcmp(role,"assise")==0)
+        {
+            new_sal=current_sal+((enrolling_year-joining_year)*10000);
+            printf("promotion done!!!");
+            printf("\n name=%s",name);
+            printf("\n joining year=%d",joining_year);
+            printf("\n Role=%s",role);
+            printf("\n initial salary=%d",current_sal);
+            printf("\n new salary=%d",new_sal);
+            printf("\n salary hike=%d",new_sal-current_sal);
+        }
+        else if(strcmp(role,"assosce")==0)
+        {
+            new_sal=current_sal+((enrolling_year-joining_year)*15000);
+            printf("promotion done!!!");
+            printf("\n name=%s",name);
+            printf("\n joining year=%d",joining_year);
+            printf("\n Role=%s",role);
+            printf("\n initial salary=%d",current_sal);
+            printf("\n new salary=%d",new_sal);
+            printf("\n salary hike=%d",new_sal-current_sal);
+        }
+        else 
+        {
+            new_sal=current_sal+((enrolling_year-joining_year)*30000);
+            printf("promotion done!!!");
+            printf("\n name=%s",name);
+            printf("\n joining year=%d",joining_year);
+            printf("\n Role=%s",role);
+            printf("\n initial salary=%d",current_sal);
+            printf("\n new salary=%d",new_sal);
+            printf("\n salary hike=%d",new_sal-current_sal);
+        }
+        if(strcmp(role,"jre")==0 && (enrolling_year-joining_year)>=3)/*here && is AND operator and is used to to satisfyy the condition if and only if both the conditions are met true*/
+        {
+            printf("\n new role= assistant enginner");
+            printf("\nCongradulations you are promoted as well!!!");
+        }
+        else if(strcmp(role,"assise")==0 && Years>=5)
+        {
+            printf("\n new role= associate enginner");
+            printf("\n Congradulations you are promoted as well!!!");
+        }
+        else if(strcmp(role,"assoce")==0 && Years>=6)
+        {
+            printf("\n new role= senior enginner");
+            printf("\n Congradulations you are promoted as well!!!");
+        }
+        else if(strcmp(role,"sre")==0 && Years>=10)
+        {
+            printf("\n you are getting extra money of 50000 per month");
+        }
+        else 
+        {
+            printf("");
+        }
+    }
+    
+    
+    
+
+    return 0;
+}
