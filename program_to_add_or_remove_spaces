@@ -1,0 +1,42 @@
+
+#include<stdio.h>
+#include<string.h>
+
+int main() {
+int space;
+    char remove[50], add[50],choice[50];
+    
+    printf("enter how many spaces are there now: ");
+    scanf("%d",&space);
+   while(1) {
+        printf("\n-------------------------------------\n");
+        printf("do you want to remove or add spaces (or type 'exit' to quit)");
+        scanf("%s",choice);
+    if(strcmp(choice,"remove")==0){
+        printf("spaces before: %d",space);
+        space--;
+        printf("\n spaces after: %d",space);
+        
+    }
+    else if (strcmp(choice,"add")==0)
+    {
+    printf("spaces before: %d",space);
+        space++;
+        printf("\n spaces after: %d",space);
+        
+    }
+    else if (strcmp(choice,"exit")==0)
+    {
+        printf("thanks for entering values...");
+       
+        break;
+    }
+    else 
+    {
+        printf("enter the choice properly");
+    }
+   }
+    
+    return 0;
+
+}
