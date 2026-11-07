@@ -1,0 +1,42 @@
+
+#include <stdio.h>
+int main(){
+int box[10][10],n,r,c;
+printf("Hi Enter the row and colum of your matrix... ");
+printf("\n Enter the row of your matrix ");
+scanf("%d",&r);
+printf("Enter the column of your matrix ");
+scanf("%d",&c);
+    printf("Ok so your matrix is a %dx%d matrix ",r,c);
+    printf("\n it will look like this...");
+for(int i=1;i<=r;i++){
+    printf(" \n ");
+    for(int j=1;j<=c;j++){
+    printf(" a%d%d ",i,j);
+        
+    }
+}
+for(int i=1;i<=r;i++){
+    for(int j=1;j<=c;j++){
+    printf("\n Enter a%d%d : ",i,j);
+        scanf("%d",&box[i][j]);
+    }
+}
+printf("\n ok so your values of elements of your %dx%d matrix are: \n",r,c);
+for(int i=1;i<=r;i++){
+    for(int j=1;j<=c;j++){
+    printf("\n a%d%d : %d \n",i,j,box[i][j]);
+
+    }
+}
+printf("\n so therefore your matrix is: \n ");
+for(int i=1;i<=r;i++){
+    printf("\n");
+    for(int j=1;j<=c;j++){
+
+    printf(" %d ",box[i][j]);
+
+    }
+}
+    return 0;
+}
